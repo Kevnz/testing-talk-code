@@ -47,6 +47,7 @@
     "mocha"
   ],
   "devDependencies": {
+    "browserify": "^5.9.3",
     "karma": "^0.12.21",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^0.1.4",
