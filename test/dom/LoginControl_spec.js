@@ -1,7 +1,3 @@
-var chai = require("chai");
-var should = require('chai').should();
-var assert = require('power-assert');
-
 chai.should();
 
 describe('Module test', function () {
@@ -17,10 +13,8 @@ describe('Module test', function () {
 	});
 	describe('#function to test', function() {
 		it('should fail', function(done) {
-			assert(true === false, "The things should equal");
+			true.should.equal(false);
 			done();
 		});
 	});
 });
-
-module.exports = this;
