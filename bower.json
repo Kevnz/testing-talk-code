@@ -1,0 +1,24 @@
+{
+  "name": "testing-talk-code",
+  "description": "Code for JS Unit Testing talk",
+  "version": "0.1.0",
+  "author": {
+      "name": "Kevin Isom",
+      "email": "kevin.isom@gmail.com"
+  },
+  "licenses": [{
+      "type": "Unlicense",
+      "url": "https://github.com/kevnz/testing-talk-code/blob/master/LICENSE"
+  }],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "mocha": "~1.21.4",
+    "chai": "~1.9.1"
+  }
+}

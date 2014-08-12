@@ -1,0 +1,52 @@
+{
+  "name": "testing-talk-code",
+  "description": "Code for JS Unit Testing talk",
+  "version": "0.1.0",
+  "homepage": "https://github.com/kevnz/testing-talk-code",
+  "author": {
+    "name": "Kevin Isom",
+    "email": "kevin.isom@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kevnz/testing-talk-code.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kevnz/testing-talk-code/issues"
+  },
+  "licenses": [
+    {
+      "type": "Unlicense",
+      "url": "https://github.com/kevnz/testing-talk-code/blob/master/LICENSE"
+    }
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">= 0.10.26",
+    "npm": ">=1.4.3"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/gulp test",
+    "unit": "./node_modules/.bin/gulp node-test",
+    "testem": "./node_modules/.bin/testem"
+  },
+  "dependencies": {
+    "chai": "^1.9.1",
+    "gulp": "^3.6.2",
+    "gulp-espower": "^0.7.1",
+    "gulp-mocha": "^0.1.1",
+    "gulp-mocha-phantomjs": "^0.2.2",
+    "gulp-watch": "^0.6.5",
+    "mocha": "^1.21.4",
+    "power-assert": "^0.7.2",
+    "static-cling": "^0.1.6"
+  },
+  "keywords": [
+    "testing",
+    "test",
+    "mocha"
+  ],
+  "devDependencies": {
+    "testem": "^0.6.18"
+  }
+}
