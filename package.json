@@ -28,7 +28,9 @@
   "scripts": {
     "test": "./node_modules/.bin/gulp test",
     "unit": "./node_modules/.bin/gulp node-test",
-    "testem": "./node_modules/.bin/testem"
+    "testem": "./node_modules/.bin/testem",
+    "karma": "./node_modules/karma/bin/karma start my.conf.js",
+    "karmab": "./node_modules/karma/bin/karma start browserify.conf.js"
   },
   "dependencies": {
     "chai": "^1.9.1",

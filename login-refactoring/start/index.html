@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Login Sample</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <style>
+        body {
+            margin:20px;
+            padding:20px;
+        }
+    </style>
+</head>
+<body>
+<div id="greeting">Hi, please login
+</div>
+<form id="login-form" class="pure-form">
+    <fieldset>
+        <input type="text" name="username" id="username" placeholder="username" /> <br />
+        <input type="password" name="password" id="password" /> <br />
+        <input type="submit" value="Login" id="login" class="pure-button pure-button-primary" />
+    </fieldset>
+</form>
+
+<script type="text/javascript" defer>
+    $(function () {
+        $('#login').on('click', function (e) {
+            e.preventDefault();
+            $.get( "/login.json",{ username: $('#username').val(), password: $('#password').val()}, function( data ) {
+                if (data.success === true) {
+                    $('#login-form').hide(function () {
+                        $('#greeting').html('Hello ' + $('#username').val());
+                    });
+                } else {
+                    $('#greeting').html('Oops, please try again');
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

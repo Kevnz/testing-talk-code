@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Login Sample</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <link rel="stylesheet" href="/bower_components/qunit/qunit/qunit.css">
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/qunit/qunit/qunit.js"></script>
+    <script src="/bower_components/jquery-mockjax/jquery.mockjax.js"></script>
+    <style>
+        body {
+            margin:20px;
+            padding:20px;
+        }
+    </style>
+</head>
+<body>
+<div id="greeting">Hi, please login
+</div>
+<form id="login-form" class="pure-form">
+    <fieldset>
+        <input type="text" name="username" id="username" placeholder="username" /> <br />
+        <input type="password" name="password" id="password" /> <br />
+        <input type="submit" value="Login" id="login" class="pure-button pure-button-primary" />
+    </fieldset>
+</form>
+<div id="qunit"></div>
+<script type="text/javascript" defer>
+    $(function () {
+
+        $('#login').on('click', function (e) {
+            e.preventDefault();
+            $.get( "/login.json", { username: $('#username').val(), password: $('#password').val()}, function( data ) {
+                var res = data ;
+                if (res.success === true) {
+                    $('#login-form').hide(function () {
+                        $('#greeting').html('Hello ' + $('#username').val());
+                    });
+                } else {
+                    $('#greeting').html('Oops, please try again');
+                }
+            });
+        });
+        QUnit.asyncTest('login success', function (assert) {
+            $.mockjax({
+                url: '/login.json',
+                responseTime: 1,
+                data: { username: $('#username').val(), password: $('#password').val()},
+                responseText: '{ "success": true }'
+            });
+            expect( 2 );
+            $('#username').val('user');
+            $('#password').val('password')
+            $('#login').click();
+
+            setTimeout( function() {           
+                assert.equal( $('#greeting').html(), 'Hello user');
+                console.log($('#login-form').css('display'))
+                assert.equal($('#login-form').css('display'), 'none');
+                QUnit.start();
+            }, 2000);
+
+        });
+        
+    });
+</script>
+</body>
+</html>

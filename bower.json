@@ -3,13 +3,15 @@
   "description": "Code for JS Unit Testing talk",
   "version": "0.1.0",
   "author": {
-      "name": "Kevin Isom",
-      "email": "kevin.isom@gmail.com"
+    "name": "Kevin Isom",
+    "email": "kevin.isom@gmail.com"
   },
-  "licenses": [{
+  "licenses": [
+    {
       "type": "Unlicense",
       "url": "https://github.com/kevnz/testing-talk-code/blob/master/LICENSE"
-  }],
+    }
+  ],
   "ignore": [
     "**/.*",
     "node_modules",
@@ -19,6 +21,9 @@
   ],
   "dependencies": {
     "mocha": "~1.21.4",
-    "chai": "~1.9.1"
+    "chai": "~1.9.1",
+    "jquery": "~2.1.1",
+    "qunit": "~1.15.0",
+    "jquery-mockjax": "~1.5.3"
   }
 }

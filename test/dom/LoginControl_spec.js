@@ -13,7 +13,8 @@ describe('Module test', function () {
 	});
 	describe('#function to test', function() {
 		it('should fail', function(done) {
-			true.should.equal(false);
+			console.log('fail');
+			true.should.equal(true);
 			done();
 		});
 	});
